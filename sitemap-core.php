@@ -1736,7 +1736,7 @@ class GoogleSitemapGenerator {
 				$postPageStmt = ", (character_length(`post_content`)  - character_length(REPLACE(`post_content`, '$pageDivider', ''))) / " . strlen($pageDivider) . " as postPages";
 			}
 			
-			$sql="SELECT `ID`, `post_author`, `post_date`, `post_date_gmt`, `post_status`, `post_name`, `post_modified`, `post_modified_gmt`, `post_parent`, `post_type` $postPageStmt $contentStmt FROM `" . $wpdb->posts . "` WHERE ";
+			$sql="SELECT `ID`, `post_author`, `post_date`, `post_date_gmt`, `post_status`, `post_title`, `post_name`, `post_modified`, `post_modified_gmt`, `post_parent`, `post_type` $postPageStmt $contentStmt FROM `" . $wpdb->posts . "` WHERE ";
 			
 			$where = '(';
 			
