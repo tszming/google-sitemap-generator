@@ -1802,6 +1802,7 @@ class GoogleSitemapGenerator {
 				}
 			} else {
 				$con = mysql_connect(DB_HOST,DB_USER,DB_PASSWORD,true);
+				mysql_query("set names " . DB_CHARSET, $con);
 				if(!$con) {
 					trigger_error("MySQL Connection failed: " . mysql_error(),E_USER_NOTICE);
 					return;
